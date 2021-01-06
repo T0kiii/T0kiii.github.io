@@ -1,0 +1,222 @@
+
+/*Página principal*/
+
+.bodyPrincipal{
+  margin: 0%; /*Para que los div de las barras se ajusten bien*/
+  background-image: url(images/1.jpg);
+  background-position: center center;
+  background-repeat: no-repeat; /*Para que no haga mosaico*/
+  background-attachment: fixed; /*Para que la imagen no se mueva cuando varíe el width o el height*/
+  background-size: cover; /*Para que cubra toda la superficie*/
+  background-color: #464646; /*esto solo para mientras se carga la pag*/
+}
+.tituloPrincipal{ 
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  height: 30%;
+  color: white;
+  font-family: sans-serif;
+  font-size: 50px;
+  text-align: right;
+}
+
+/*Animaciones*/
+.fading-animado{
+  animation:fading 10s
+}
+@keyframes fading{ /*Lo único que no he metido de clase*/
+  0%{opacity:0}100%{opacity:1}
+}
+
+/*Barras de navegación*/
+.barra {
+  overflow: hidden;
+  background-color: #00b300;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 50px;
+}
+.barraBaja {
+  overflow: hidden; /*Nunca va a pasar, pero por si acaso*/
+  background-color: #00b300;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+}
+.barra a{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+.barraBaja a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+.barraBaja a:hover, .barra a:hover {
+  background: #00e600;
+  font-size: 20px;
+}
+.barraBaja a.active, .barra a.active {
+  background-color: #4CAF50;
+  color: black;
+}
+
+/*Cuerpo de página*/
+html,body{ /*Para que no dé problemas, width y height al 100%*/
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  font-family: sans-serif;
+  background-color: rgba(245, 245, 245, 0.801);
+  position: absolute;
+  display: block;
+}
+
+/*Imágenes*/
+.imagenTexto{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  padding: 5px;    
+  background-color: white; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+img {
+  border-radius: 8px;
+  width: 50%;
+  height: auto;
+  right: 10%;
+}
+
+/*Página 2*/
+.tituloHistoria{
+  font-family: sans-serif;
+  font-size: 25px;
+  text-align: center;
+  color: white;
+}
+nav{
+  position: relative;
+  top: 0%;
+  width: 100%;
+  height: 50px;
+  z-index: 3; /*Posiciona en la capa 100 por delante, para que no se solape*/
+}
+main{
+  position: absolute;
+  float: center;
+  top: 50px;
+  right: 0px;
+  width: 69%; /*si pongo 70%, se vuelve loco al 100%*/
+  border-radius: 8px;
+  height: auto;
+  background-color: cadetblue;
+  font-family: sans-serif;
+  z-index: 2;
+}
+footer{
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  flex-grow: 1;
+  display: inline;
+}
+aside{
+  position: relative;
+  top: 70px;
+  left: 0px;
+  width: 30%;
+  height: auto;
+}
+.indice{/*Índice lateral derecho*/
+  position: fixed; /*Que nos siga mientras bajamos*/
+  left: 10px;
+  height: fit-content;
+  width: 20%;
+  padding: 20px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  color: #464646;
+  font-size: 25px;
+  background-color: #c0f3a8;
+  background-attachment: fixed;
+}
+h1, h2, h3, h4, h5{
+  margin-top: 60px;
+  margin-bottom: 50px;
+}
+a{
+  color: #464646;
+}
+div{
+  position: absolute;
+  width: 50%;
+  height: 80%;
+  background-color: transparent;
+}
+
+/*Página 4*/
+.barraDesplegable{
+  width: 100%;
+  display: flex; /*Para crear caja flexible*/
+  justify-content: center;
+  align-content: flex-end;
+}
+.menu{
+  display: flex;
+  flex-wrap: wrap; /*Para agarrar el contenido*/
+  height: 30%;
+}
+.menu .imagen{
+	position: absolute;
+	bottom: 0;
+	right: 30px;
+	width: 0%;
+  z-index: 20;
+}
+.menu li{
+  flex-basis: 0px; /*Como el reemplazo del width*/
+  flex-grow: 1; /*Para que ocupen todo el ancho disponible*/
+  position: relative;
+}
+.menu li, a{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: auto;
+}
+.menu li a .text-item{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #fff;
+	top: 0%;
+	position: absolute;
+  z-index: 10;
+}
+.menu li:hover .down-item, .menu li:hover .text-item{
+	top: 100%;
+	height: 115%;
+}
+.menu li:hover .imagen{
+	width: 100%;
+	right: 0px;
+}
+.text-item{}
+.down-item{}

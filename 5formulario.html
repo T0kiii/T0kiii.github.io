@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Quiz</title>
+        <link rel="stylesheet" href="maquetado.css">
+        <link rel="icon" href="images/noruega.png">
+        <meta charset="utf-8">
+        <meta name="author" content="Alberto González"/>
+        <meta name="description" content="Noruega"/>
+        <meta name="keywords" content="Noruega, viajes, turismo, cultura"/>
+        <meta name="classification" content="turismo"/>
+    </head>
+    <body>
+        <nav>
+            <div class="barra">            
+                <a href="4enelmundo.html">Noruega en el mundo</a>
+                <a href="3lugares.html">Lugares</a>
+                <a href="2historia.html">Historia</a>
+                <a href="index.html">Principal</a>
+            </div>
+        </nav>
+        <main>
+            <div>
+                <a name="principio"><h1>¿Qué opinas de esta página?</h1></a>
+                <form name="formulario" method="post" enctype="text/plain" action="datos.php">
+                    <h4>¿Te ha gustado mucho?</h4>
+                    <input type="text" name="Respuesta">
+            
+                    <h4>¿Qué ciudad visitarías?</h4>
+                    <input type="checkbox" name="Trondheim" value="trondheim"/><label>Trondheim</label>
+                    <input type="checkbox" name="Bergen" value="bergen"/><label>Bergen</label>
+                    <input type="checkbox" name="Tromsø" value="tromso"><label>Tromsø</label><br>
+            
+                    <h4>¿Qué ciudad está más al norte de Noruega?</h4>
+                    <input type="radio" name="test" value="trondheim"><label>Trondheim</label>
+                    <input type="radio" name="test" value="bergen"><label>Bergen</label>
+                    <input type="radio" name="test" value="tromso"><label>Tromsø</label><br>
+            
+                    <h4>Selecciona qué ciudad está situada más al norte</h4>
+                    <select name="país">
+                        <option value= "bergen"> Bergen </option>
+                        <option value= "tromso"> Tromsø </option>
+                        <option value= "trondheim"> Trondheim </option><br>
+                    </select>
+            
+                    <h4>Piensa en una fecha para el viaje</h4>
+                    <input type="date" name="F_cumple"><br>
+            
+                    <h4>Sube una foto de Noruega si estuviste alguna vez</h4>
+                    <input type="file" name="imagen"><br>
+            
+                    <h4>Valora el contenido de esta página</h4><br>
+                    Desagradable
+                    <input type="range" name="valoracion" min="0" max="6">
+                    Increíble<br/>
+            
+                    <h4>Introduce un número de teléfono de contacto</h4>
+                    <input type="text" name="numTelef" pattern="[0-9]{9}" required><br>
+                    <br><hr>
+
+                    <h5>Páginas relacionadas</h5>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d128083.26573290121!2d10.645035654788334!3d59.893952860680045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416e61f267f039%3A0x7e92605fd3231e9a!2sOslo%2C%20Noruega!5e0!3m2!1ses!2ses!4v1574790547324!5m2!1ses!2ses" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""> Oslo en el mapa</iframe><br><!-- Este texto aparecerá si el navegador no reconoce la URL --> 
+
+                    <h5>Imágenes de Noruega</h5>
+                    <script type="text/javascript">
+                        function imagenNor(ka){
+                            var pic;
+                            if (ka == 0) {
+                                pic = "images/trondheim.jpg"
+                            } else if (ka == 1) {
+                                pic = "images/1.jpg"
+                            } else if (ka == 2) {
+                                pic = "images/tromso.jpg"
+                            }
+                            document.getElementById('myImage').src = pic;
+                        }
+                    </script>
+            
+                    <img id="myImage" src=images/trondheim.jpg width="290" height="250">
+                    <br/>
+                    <button type="button" onclick="imagenNor(0)">Primera foto</button>
+                    <button type="button" onclick="imagenNor(1)">Segunda foto</button>
+                    <button type="button" onclick="imagenNor(2)">Tercera foto</button><br>
+                    
+                    <hr><br>
+            
+                    <input type="submit" name="Enviar" value="Enviar"/>
+                    <input type="reset" name="Limpiar formulario" value="Limpiar formulario"/>
+                    <p></p><br>           
+                </form>
+            </div>   
+        </main>
+        <footer>
+            <div class="">
+                <a href="#principio"><button >Volver al inicio</button></a>
+                <a href="1index.html"><button >Primera página</button></a>
+            </div>
+        </footer>
+    </body>
+</html>
