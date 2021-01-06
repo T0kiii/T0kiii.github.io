@@ -1,5 +1,5 @@
 # Página turismo Noruega
-[Página]: T0kiii.github.io/index.html	"Página principal"
+[Inicio](T0kiii.github.io)"Página de inicio"
 
 Proyecto para lenguaje de marcas sobre hacer una página relacionada con un país.
 
